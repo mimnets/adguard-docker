@@ -78,5 +78,36 @@ docker compose up -d
 ```
 
 ## English Instructions
+```
+Method 1: For the Entire Network at Once (DHCP Server - Recommended)
+In this method, the MikroTik router automatically provides the AdGuard Home IP as the DNS server to all PCs, laptops, and mobile devices on your network.
 
+Log in to your MikroTik router using Winbox.
+
+From the left menu, navigate to IP -> DHCP Server.
+
+Click on the Networks tab.
+
+Double-click to open your local network profile (usually 192.168.x.x/24 or your LAN subnet).
+
+In the DNS Servers box, enter your server IP: 192.168.22.111.
+(If there are other IPs like 8.8.8.8 or 1.1.1.1 already listed, delete them, or click the down arrow to keep them as a backup in the second slot).
+
+Click Apply and then OK.
+
+Note: For this method to take effect, you need to disconnect and reconnect your local devices to the Wi-Fi, or unplug and plug back the LAN cable. This forces the devices to fetch the new DNS IP from the router.
+
+Method 2: Changing the Router's Own DNS (Alternative Way)
+If you prefer the MikroTik router to handle all DNS queries itself and use AdGuard Home in the backend, follow these steps:
+
+From the Winbox menu, navigate to IP -> DNS.
+
+In the Servers box, enter your server IP: 192.168.22.111.
+
+Check the Allow Remote Requests box.
+
+Click Apply and then OK.
+
+Important (For Method 2): If you use this method, you must go to IP -> DHCP Server -> Networks and set the DNS Server box to your MikroTik router's own IP address (for example, 192.168.22.1 or your gateway IP).
+```
 
