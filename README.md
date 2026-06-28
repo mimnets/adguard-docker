@@ -111,3 +111,25 @@ Click Apply and then OK.
 Important (For Method 2): If you use this method, you must go to IP -> DHCP Server -> Networks and set the DNS Server box to your MikroTik router's own IP address (for example, 192.168.22.1 or your gateway IP).
 ```
 
+## Extra info
+```
+যদি আপনি ISP DNS ব্যবহার করতে চান (ঐচ্ছিক):
+১. আপনার AdGuard Home ড্যাশবোর্ডে লগইন করুন (http://192.168.22.111:3000)।
+২. ওপরের মেনু থেকে Settings -> DNS settings-এ যান।
+৩. Upstream DNS servers বক্সে নিচের মতো করে আপনার ISP-এর আইপি এবং অন্যান্য গ্লোবাল DNS যোগ করে দিতে পারেন:
+
+Plaintext
+https://dns.cloudflare.com/dns-query
+123.200.0.254
+203.76.96.5
+8.8.8.8
+৪. নিচের দিকে স্ক্রোল করে Apply বাটনে ক্লিক করুন।
+
+আমার পরামর্শ (Best Practice):
+ISP-এর সাধারণ DNS-এ অনেক সময় ওয়েবসাইট লোড হতে বেশি সময় নেয় এবং এগুলো এনক্রিপ্টেড (Secure) থাকে না। সবচেয়ে ভালো কানেক্টিভিটি এবং প্রাইভেসি পেতে Upstream DNS servers বক্সে শুধু নিচের এই এনক্রিপ্টেড লিংকগুলো ব্যবহার করুন:
+
+Plaintext
+https://dns.cloudflare.com/dns-query
+https://dns.google/dns-query
+এটি আপনার লোকাল নেটওয়ার্কের ইন্টারনেট ব্রাউজিংকে অনেক বেশি সিকিউর এবং ফাস্ট রাখবে।
+```
